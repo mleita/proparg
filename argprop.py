@@ -50,7 +50,8 @@ def load_model():
 model = load_model()
 
 # Crear la aplicación Streamlit
-st.title('Estimación de precios con un modelo de aprendizaje automático')
+st.title('Estimador de precios de propiedades')
+st.subheader('Estimación de precios de bienes raices con un modelo de aprendizaje automático')
 
 # Encabezado desplegable para "¿Qué es esta aplicación?"
 with st.expander('**¿Que es esta aplicación?**',expanded=True):
