@@ -4,9 +4,31 @@ import pickle
 import category_encoders as ce
 from geopy.geocoders import Nominatim
 import folium
+import os
+import pickle
+import rarfile 
 
 
+# Verificar si el archivo .pkl se extrajo correctamente
+pkl_file_path = 'modelo_entrenado.pkl'  # Nombre del archivo .pkl dentro del RAR
 
+# Cargar el archivo CSV
+@st.cache(allow_output_mutation=True)
+def load_data():
+    df = pd.read_csv('datos_locprov.csv')
+    return df
+
+df = load_data()
+
+# Cargar el modelo entrenado
+@st.cache(allow_output_mutation=True)
+def load_model():
+    # Carga tu modelo entrenado desde la ubicación correcta
+    with open(pkl_file_path, 'rb') as archivo:
+        model = pickle.load(archivo)
+    return model
+
+model = load_model()
 
 
 # Cargar el archivo CSV
