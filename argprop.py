@@ -104,7 +104,7 @@ property_type = st.selectbox('Tipo de Propiedad', ['Casa', 'Departamento', 'PH',
 
 
 # Configura el geocodificador de Nominatim
-geolocator = Nominatim(user_agent="geoapiExercises")
+geolocator = Nominatim(user_agent="pBjgWtzFy3Ti81pKaiO5GFjaRvft3zLq")
 
 calle = st.text_input("Ingrese su calle:")
 altura = st.text_input("Ingrese la altura:")
