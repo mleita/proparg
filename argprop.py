@@ -111,6 +111,10 @@ altura = st.text_input("Ingrese la altura:")
 
 if st.button('Realizar Estimación'):
 
+    
+    if not (calle and altura and l2 and l3 and property_type and surface_total and surface_covered):
+        st.error("Por favor, complete todos los campos antes de realizar la estimación.")
+
     # Ingresa la dirección que deseas geocodificar
     direccion = f'{calle},{altura},{l2},{l3}'
 
