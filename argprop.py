@@ -6,7 +6,7 @@ from geopy.geocoders import Nominatim
 import folium
 import os
 import pickle
-import rarfile 
+from unidecode import unidecode
 
 
 # Verificar si el archivo .pkl se extrajo correctamente
@@ -116,7 +116,7 @@ if st.button('Realizar Estimación'):
         st.error("Por favor, complete todos los campos antes de realizar la estimación.")
 
     # Ingresa la dirección que deseas geocodificar
-    direccion = f'{calle},{altura},{l2},{l3}'
+    direccion = unidecode(f'{calle},{altura},{l2},{l3}')
 
     # Utiliza el geocodificador para obtener las coordenadas (latitud y longitud)
     location = geolocator.geocode(direccion)
@@ -177,7 +177,7 @@ if st.button('Realizar Estimación'):
 if st.button('Información del autor'):
     st.sidebar.image('maxi.png', width = 150)
     st.sidebar.title('Acerca de Mí')
-    st.sidebar.write('¡Hola! Mi nombre es Maximiliano Leita, un entusiasta la programación, la ciencia de datos y profesional del márketing.')
+    st.sidebar.write('¡Hola! Mi nombre es Maximiliano Leita, un entusiasta de la programación, la ciencia de datos y profesional del márketing.')
 
     # Agregar información adicional
     st.sidebar.header('Contactame')
