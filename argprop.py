@@ -89,7 +89,7 @@ surface_covered = st.text_input("Ingrese la superficie cubierta (m2): ")
 # Agrega tantas características como sean necesarias para tu modelo
 
 # Agregar controles de entrada para las categorías "l2" y "l3"
-l2 = st.selectbox('Provinicia:', df['l2'].unique())
+l2 = st.selectbox('Provincia:', df['l2'].unique())
 filtered_df_l2 = df[df['l2'] == l2]
 l3 = st.selectbox('Localidad:', filtered_df_l2['l3'].unique())
 
